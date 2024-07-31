@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>List notes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container mt-5">
+      <h2>Edit note</h2>
+
+      <p>Id: <span th:text="${note.getId()}"></span></p>
+      <p>Title: <span th:text="${note.getTitle()}"></span></p>
+      <p>Content: <span th:text="${note.getContent()}"></span></p>
+
+      <div>
+          <form action="/edit" method="get">
+              <label for="${noteMap.getValue().Title}">Title: </label>
+              <input type="text" id="${noteMap.getValue().Title}" name="title">
+              <br>
+              <br>
+
+              <label for="${noteMap.getValue().Content}">Content: </label>
+              <input type="text" id="${noteMap.getValue().Content}" name="content">
+              <br>
+              <br>
+
+              <input type="submit" value="Update">
+          </form>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+  </div>
+</body>
+</html>
